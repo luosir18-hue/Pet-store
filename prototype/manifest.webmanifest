@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "宠物店 · 手机测试版",
+  "short_name": "宠物店测试",
+  "description": "仅虚构数据、本机演示，不同步，不可营业",
+  "lang": "zh-CN",
+  "start_url": "./#today",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f5ef",
+  "theme_color": "#22634f",
+  "icons": [
+    {"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

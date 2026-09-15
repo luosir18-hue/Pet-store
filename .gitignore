@@ -1,0 +1,29 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+# Local audit work, real data, uploads and backups never enter Git
+work/
+private/
+uploads/
+backups/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.asar
+*.bak
+*.dump
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Logs and local tooling
+*.log
+.DS_Store
+Thumbs.db
+playwright-report/
+test-results/

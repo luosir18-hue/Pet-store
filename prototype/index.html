@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#22634f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="宠物店测试">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Pet-store · 手机测试版</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icon-180.png">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+  <script type="module" src="./mobile.mjs"></script>
+</head>
+<body>
+  <div class="demo-banner">手机测试版 · 请勿填写真实客户资料 · 不收款、不通知 · 本机保存，不跨手机同步</div>
+  <div id="shell" class="shell">
+    <header class="topbar">
+      <a href="#today" class="brand"><span class="brand-icon" aria-hidden="true">爪</span><span>Pet-store<small>把时间留给小家伙们</small></span></a>
+      <div class="tools"><button id="phone-toggle" type="button" class="quiet">手机排版</button><button id="reset" type="button" class="quiet">重置演示</button></div>
+    </header>
+    <details class="mobile-help"><summary>手机试用与安装说明</summary>
+      <p>这是流程测试版，不是营业系统。演示进度只保存在当前浏览器；清理浏览器数据或卸载入口可能丢失记录，不能当作备份。</p>
+      <p><strong>苹果：</strong>用 Safari 打开已部署的 HTTPS 链接，分享 → 添加到主屏幕；如有“作为 Web App 打开”，将其开启。</p>
+      <p><strong>华为：</strong>用系统浏览器打开链接，在菜单中查找“添加至桌面”。不同机型/系统入口可能不同；找不到时先收藏网页。此包不是 APK，也不是鸿蒙原生安装包。</p>
+      <p>微信中打不开或没有添加入口时，请复制链接到系统浏览器。第一次需联网加载并等待下方缓存提示；添加到桌面后也请联网打开一次，再测试飞行模式。</p>
+      <p>两部手机各自演示，预约不会发给老板。日期固定为2026年9月测试场景，并非真实可预约日期。</p>
+      <p><a href="./phone-guide.html">查看完整手机测试步骤</a></p>
+    </details>
+    <div class="device-status" aria-live="polite"><span id="storage-status">正在读取本机演示…</span><span id="offline-status">正在检查离线支持…</span><button id="apply-update" type="button" class="secondary" hidden>更新测试版（刷新页面）</button></div>
+    <nav aria-label="原型页面" class="nav">
+      <a href="#today">今天工作台</a><a href="#order">单页订单</a><a href="#booking">客人预约</a><a href="#boarding">寄养排期</a><a href="#transport">接送任务</a>
+    </nav>
+    <main id="main" tabindex="-1"></main>
+    <footer>PHASE 0 / 流程讨论稿 <span>价格、容量和时段均为演示设定</span></footer>
+  </div>
+  <p id="notice" role="status" aria-live="polite" hidden></p>
+  <dialog id="payment-dialog" aria-labelledby="payment-title">
+    <form id="payment-form">
+      <span class="eyebrow">演示操作</span><h2 id="payment-title">核实后，再登记收款</h2>
+      <p>示例订单应收 ¥160.00。此操作仅演示人工登记，不调用支付渠道。</p>
+      <label class="check"><input id="verified" type="checkbox" required> 我已核实这笔演示收款</label>
+      <div class="actions"><button type="button" id="cancel-payment" class="secondary">返回核对</button><button type="submit">确认演示收款</button></div>
+    </form>
+  </dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">重置本机演示？</h2><p>只重置这台设备此浏览器的测试进度，不影响另一台手机。未提交的表单内容也会清空。</p><div class="actions"><button id="cancel-reset" type="button" class="secondary">保留进度</button><button id="confirm-reset" type="button">确认重置演示</button></div></dialog>
+</body>
+</html>
